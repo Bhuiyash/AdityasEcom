@@ -13,7 +13,7 @@ import { PRODUCTS } from '../../assets/products';
 export class HomeComponent {
   products = PRODUCTS;
   page = 1;
-  pageSize = 4;
+  pageSize = 6;
   cart: any[] = JSON.parse(localStorage.getItem('cart') || '[]');
 
   get paginatedProducts() {
