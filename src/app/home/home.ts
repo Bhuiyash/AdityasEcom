@@ -26,6 +26,14 @@ export class HomeComponent {
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
+  removeFromCart(product: any) {
+    const index = this.cart.findIndex((item) => item.name === product.name);
+    if (index !== -1) {
+      this.cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(this.cart));
+    }
+  }
+
   nextPage() {
     if (this.page * this.pageSize < this.products.length) {
       this.page++;

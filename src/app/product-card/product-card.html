@@ -7,6 +7,7 @@
       <span class="product-price">${{ product.price }}</span>
       <button class="add-to-cart-btn" *ngIf="addToCart" (click)="addToCart(product)">Add to Cart</button>
       <span *ngIf="cartCountForProduct && cartCountForProduct > 0" class="product-cart-count">({{ cartCountForProduct }})</span>
+      <button class="remove-from-cart-btn" *ngIf="removeFromCart && cartCountForProduct && cartCountForProduct > 0" (click)="removeFromCart(product)">Remove</button>
     </div>
   </div>
 </div>

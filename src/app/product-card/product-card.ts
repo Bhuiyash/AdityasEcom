@@ -12,4 +12,5 @@ export class ProductCardComponent {
   @Input() product: any;
   @Input() addToCart?: (product: any) => void;
   @Input() cartCountForProduct?: number;
+  @Input() removeFromCart?: (product: any) => void;
 }

@@ -5,6 +5,7 @@
       *ngFor="let product of paginatedProducts"
       [product]="product"
       [addToCart]="addToCart.bind(this)"
+      [removeFromCart]="removeFromCart.bind(this)"
       [cartCountForProduct]="getCartCount(product)"
     ></app-product-card>
   </div>
