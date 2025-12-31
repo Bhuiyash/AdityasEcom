@@ -2,6 +2,15 @@
   <div class="navbar-logo">Aditya's Ecom</div>
   <ul class="navbar-links">
     <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
-    <li><a routerLink="/cart" routerLinkActive="active-link">Cart</a></li>
+    <li>
+      <a routerLink="/cart" routerLinkActive="active-link">
+        <span class="cart-icon" aria-label="Cart">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.35 2.7A1 1 0 0 0 6.6 17h10.8a1 1 0 0 0 .95-.68L21 13M7 13V6a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v7" />
+          </svg>
+        </span>
+        Cart
+      </a>
+    </li>
   </ul>
 </nav>

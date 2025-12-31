@@ -6,6 +6,11 @@
   color: #fff;
   padding: 1rem 2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97%;
+  z-index: 1000;
 }
 
 .navbar-logo {
@@ -37,4 +42,22 @@
 .navbar-links a.active-link {
   border-bottom: 2px solid #ffd700;
   color: #ffd700;
+}
+
+.cart-icon {
+  display: inline-flex;
+  vertical-align: middle;
+  margin-right: 0.4rem;
+  height: 1.2em;
+  width: 1.2em;
+}
+
+.cart-icon svg {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  padding-top: 72px;
 }
