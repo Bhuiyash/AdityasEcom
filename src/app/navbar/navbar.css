@@ -6,11 +6,10 @@
   color: #fff;
   padding: 1rem 2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  position: static;
-  /* top: 0;
-  left: 0;
-  width: 97%; */
-  /* z-index: 1000; */
+  width: 100%;
+  z-index: 1000;
+  margin-bottom: 2rem;
+  box-sizing: border-box;
 }
 
 .navbar-logo {
@@ -20,7 +19,6 @@
 }
 
 .navbar-links {
-  cursor: pointer;
   list-style: none;
   display: flex;
   gap: 2rem;
@@ -33,15 +31,14 @@
   text-decoration: none;
   font-size: 1.1rem;
   transition: color 0.2s;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
-.navbar-links a:hover {
-  color: #ffd700;
-}
-
+.navbar-links a:hover,
 .navbar-links a.active-link {
-  border-bottom: 2px solid #ffd700;
   color: #ffd700;
+  background: rgba(255,255,255,0.08);
 }
 
 .cart-icon {
@@ -59,5 +56,19 @@
 }
 
 body {
-  padding-top: 72px;
+  background: #f6f8fa; /* Light gray background for the whole app */
+  padding-top: 0; /* Ensure no padding at the top */
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .navbar-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
 }
