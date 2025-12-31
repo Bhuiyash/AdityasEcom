@@ -49,3 +49,28 @@
   color: #2575fc;
   margin-top: 2rem;
 }
+.cart-qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.qty-btn {
+  background: #2575fc;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.qty-btn:hover {
+  background: #6a11cb;
+}
+.cart-qty {
+  font-size: 1.1rem;
+  font-weight: bold;
+  min-width: 2rem;
+  text-align: center;
+}

@@ -37,4 +37,17 @@ export class CartComponent {
     this.cart = this.cart.filter(item => item.name !== product.name);
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
+
+  addOne(product: any) {
+    this.cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+  }
+
+  removeOne(product: any) {
+    const index = this.cart.findIndex(item => item.name === product.name);
+    if (index !== -1) {
+      this.cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(this.cart));
+    }
+  }
 }

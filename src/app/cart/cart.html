@@ -4,7 +4,12 @@
   <div class="cart-list" *ngIf="cart.length > 0">
     <div *ngFor="let item of uniqueCartItems(); let i = index" class="cart-item">
       <app-product-card [product]="item.product" [cartCountForProduct]="item.count"></app-product-card>
-      <button class="remove-btn" (click)="removeAllOfProduct(item.product)">Remove All</button>
+      <div class="cart-qty-controls">
+        <button class="qty-btn" (click)="removeOne(item.product)">-</button>
+        <span class="cart-qty">{{ item.count }}</span>
+        <button class="qty-btn" (click)="addOne(item.product)">+</button>
+        <button class="remove-btn" (click)="removeAllOfProduct(item.product)">Remove All</button>
+      </div>
     </div>
     <div class="cart-total">
       <span>Total: ${{ total }}</span>
