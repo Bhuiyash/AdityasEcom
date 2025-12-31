@@ -5,17 +5,20 @@
   background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
   color: #fff;
   padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   width: 100%;
   z-index: 1000;
-  margin-bottom: 2rem;
+  position: sticky;
+  top: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
 .navbar-logo {
   font-size: 1.7rem;
   font-weight: bold;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  white-space: nowrap;
 }
 
 .navbar-links {
@@ -56,19 +59,106 @@
 }
 
 body {
-  background: #f6f8fa; /* Light gray background for the whole app */
-  padding-top: 0; /* Ensure no padding at the top */
+  background: #f6f8fa;
+  margin: 0;
+  padding: 0;
 }
 
-@media (max-width: 900px) {
+/* Mobile hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 1rem;
+    flex-wrap: wrap;
   }
+  
+  .navbar-logo {
+    font-size: 1.4rem;
+    flex: 1;
+  }
+  
+  .hamburger {
+    display: flex;
+    order: 3;
+  }
+  
   .navbar-links {
+    display: none;
     width: 100%;
-    justify-content: flex-start;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    order: 4;
+  }
+  
+  .navbar-links.active {
+    display: flex;
+  }
+  
+  .navbar-links li {
+    width: 100%;
+  }
+  
+  .navbar-links a {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem;
+  }
+  
+  .navbar-logo {
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .navbar-links a {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important;
+  }
+  
+  .navbar-links {
+    display: flex !important;
   }
 }
