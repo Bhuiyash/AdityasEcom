@@ -3,30 +3,7 @@
 
   <div class="checkout-content">
     <!-- Left: Form -->
-    <form class="checkout-form">
-    <label>
-      Name:
-      <input type="text" name="name" required />
-    </label>
-    <label>
-      Email:
-      <input type="email" name="email" required />
-    </label>
-    <label>
-      Address:
-      <input type="text" name="address" required />
-    </label>
-    <label>
-      Payment Method:
-      <select name="payment">
-        <option value="card">Credit/Debit Card</option>
-        <option value="upi">UPI</option>
-        <option value="paypal">PayPal</option>
-        <option value="cod">Cash on Delivery</option>
-      </select>
-    </label>
-    <button type="submit" class="checkout-btn">Place Order</button>
-  </form>
+    <app-checkout-form (formSubmit)="onFormSubmit($event)"></app-checkout-form>
 
     <!-- Right: Product Details -->
     <div class="order-summary">

@@ -1,0 +1,97 @@
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #333;
+  gap: 0.4rem;
+}
+
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+
+.checkout-form input:focus,
+.checkout-form select:focus,
+.checkout-form textarea:focus {
+  outline: none;
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+}
+
+.checkout-form input.error,
+.checkout-form select.error,
+.checkout-form textarea.error {
+  border-color: #e53e3e;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.error-message {
+  font-size: 0.875rem;
+  color: #e53e3e;
+  margin-top: 0.25rem;
+  font-weight: 400;
+}
+
+.checkout-btn {
+  margin-top: 1.5rem;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.checkout-btn:hover:not(:disabled) {
+  background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+}
+
+.checkout-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.checkout-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .checkout-form input,
+  .checkout-form select,
+  .checkout-form textarea {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+  
+  .checkout-btn {
+    padding: 0.65rem 1.25rem;
+    font-size: 1rem;
+  }
+}
