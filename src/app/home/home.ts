@@ -14,10 +14,16 @@ export class HomeComponent {
   products = PRODUCTS;
   page = 1;
   pageSize = 4;
+  cart: any[] = JSON.parse(localStorage.getItem('cart') || '[]');
 
   get paginatedProducts() {
     const start = (this.page - 1) * this.pageSize;
     return this.products.slice(start, start + this.pageSize);
+  }
+
+  addToCart(product: any) {
+    this.cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(this.cart));
   }
 
   nextPage() {

@@ -1,7 +1,7 @@
 <nav class="navbar">
-  <div class="navbar-logo">AdityaEcom</div>
+  <div class="navbar-logo">Aditya's Ecom</div>
   <ul class="navbar-links">
-    <li><a routerLink="/">Home</a></li>
-    <!-- Add more links as needed -->
+    <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
+    <li><a routerLink="/cart" routerLinkActive="active-link">Cart</a></li>
   </ul>
 </nav>

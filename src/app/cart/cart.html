@@ -1,0 +1,13 @@
+<div class="cart-container">
+  <h2>Your Cart</h2>
+  <div *ngIf="cart.length === 0" class="empty-cart">Your cart is empty.</div>
+  <div class="cart-list" *ngIf="cart.length > 0">
+    <div *ngFor="let product of cart; let i = index" class="cart-item">
+      <app-product-card [product]="product"></app-product-card>
+      <button class="remove-btn" (click)="removeFromCart(i)">Remove</button>
+    </div>
+    <div class="cart-total">
+      <span>Total: ${{ total }}</span>
+    </div>
+  </div>
+</div>
