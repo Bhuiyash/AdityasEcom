@@ -13,7 +13,7 @@ export class CartComponent {
   cart: any[] = JSON.parse(localStorage.getItem('cart') || '[]');
 
   get total() {
-    return this.cart.reduce((sum, item) => sum + item.price, 0);
+    return Number(this.cart.reduce((sum, item) => sum + item.price, 0).toFixed(2));
   }
 
   removeFromCart(index: number) {
