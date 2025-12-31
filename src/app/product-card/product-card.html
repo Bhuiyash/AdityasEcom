@@ -5,9 +5,9 @@
     <p class="product-description">{{ product.description }}</p>
     <div class="product-footer">
       <span class="product-price">${{ product.price }}</span>
-      <button class="add-to-cart-btn" *ngIf="addToCart" (click)="addToCart(product)">Add to Cart</button>
+      <button class="add-to-cart-btn" *ngIf="addToCart" (click)="handleAddToCart()">Add to Cart</button>
       <span *ngIf="cartCountForProduct && cartCountForProduct > 0" class="product-cart-count">({{ cartCountForProduct }})</span>
-      <button class="remove-from-cart-btn" *ngIf="removeFromCart && cartCountForProduct && cartCountForProduct > 0" (click)="removeFromCart(product)">Remove</button>
+      <button class="remove-from-cart-btn" *ngIf="removeFromCart && cartCountForProduct && cartCountForProduct > 0" (click)="handleRemoveFromCart()">Remove</button>
     </div>
   </div>
 </div>
