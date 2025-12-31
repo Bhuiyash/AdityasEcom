@@ -24,6 +24,8 @@ export class HomeComponent {
   addToCart(product: any) {
     this.cart.push(product);
     localStorage.setItem('cart', JSON.stringify(this.cart));
+    // Dispatch custom event to update navbar
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
   }
 
   removeFromCart(product: any) {
@@ -31,6 +33,8 @@ export class HomeComponent {
     if (index !== -1) {
       this.cart.splice(index, 1);
       localStorage.setItem('cart', JSON.stringify(this.cart));
+      // Dispatch custom event to update navbar
+      window.dispatchEvent(new CustomEvent('cartUpdated'));
     }
   }
 

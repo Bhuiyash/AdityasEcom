@@ -37,11 +37,15 @@ export class CartComponent {
   removeAllOfProduct(product: any) {
     this.cart = this.cart.filter(item => item.name !== product.name);
     localStorage.setItem('cart', JSON.stringify(this.cart));
+    // Dispatch custom event to update navbar
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
   }
 
   addOne(product: any) {
     this.cart.push(product);
     localStorage.setItem('cart', JSON.stringify(this.cart));
+    // Dispatch custom event to update navbar
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
   }
 
   removeOne(product: any) {
@@ -49,6 +53,8 @@ export class CartComponent {
     if (index !== -1) {
       this.cart.splice(index, 1);
       localStorage.setItem('cart', JSON.stringify(this.cart));
+      // Dispatch custom event to update navbar
+      window.dispatchEvent(new CustomEvent('cartUpdated'));
     }
   }
 }

@@ -45,5 +45,7 @@ export class CheckoutComponent {
     // Clear cart after successful order
     localStorage.removeItem('cart');
     this.cart = [];
+    // Dispatch custom event to update navbar
+    window.dispatchEvent(new CustomEvent('cartUpdated'));
   }
 }
