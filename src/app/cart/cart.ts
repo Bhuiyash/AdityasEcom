@@ -20,4 +20,21 @@ export class CartComponent {
     this.cart.splice(index, 1);
     localStorage.setItem('cart', JSON.stringify(this.cart));
   }
+
+  uniqueCartItems() {
+    const map = new Map();
+    for (const item of this.cart) {
+      if (map.has(item.name)) {
+        map.get(item.name).count++;
+      } else {
+        map.set(item.name, { product: item, count: 1 });
+      }
+    }
+    return Array.from(map.values());
+  }
+
+  removeAllOfProduct(product: any) {
+    this.cart = this.cart.filter(item => item.name !== product.name);
+    localStorage.setItem('cart', JSON.stringify(this.cart));
+  }
 }
