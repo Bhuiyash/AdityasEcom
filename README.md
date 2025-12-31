@@ -1,14 +1,16 @@
-# AdityaEcom
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
-
+This project is in Angular 20.
 ## Development server
 
 To start a local development server, run:
 
-```bash
-ng serve
-```
-first commit testing ongithub
+# Development
+npm run start:dev          # Development server
+npm run build:dev          # Development build
 
-all the code edits will be commited on this branch
+# Staging  
+npm run start:staging      # Staging server
+npm run build:staging      # Staging build
+
+# Production
+npm run start:prod         # Production server  
+npm run build:prod         # Production build
