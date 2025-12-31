@@ -74,3 +74,18 @@
   min-width: 2rem;
   text-align: center;
 }
+.checkout-btn {
+  margin: 2rem auto 0 auto;
+  display: block;
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.checkout-btn:hover {
+  background: linear-gradient(90deg, #2575fc 0%, #6a11cb 100%);
+}

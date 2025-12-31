@@ -1,0 +1,38 @@
+<div class="checkout-container">
+  <h2>Checkout</h2>
+  <form class="checkout-form">
+    <label>
+      Name:
+      <input type="text" name="name" required />
+    </label>
+    <label>
+      Email:
+      <input type="email" name="email" required />
+    </label>
+    <label>
+      Address:
+      <input type="text" name="address" required />
+    </label>
+    <label>
+      Payment Method:
+      <select name="payment">
+        <option value="card">Credit/Debit Card</option>
+        <option value="upi">UPI</option>
+        <option value="paypal">PayPal</option>
+        <option value="cod">Cash on Delivery</option>
+      </select>
+    </label>
+    <button type="submit" class="checkout-btn">Place Order</button>
+  </form>
+  <div class="checkout-note">
+    <strong>Popular Payment Gateways:</strong>
+    <ul>
+      <li>Stripe (Card, UPI, Wallets, etc.)</li>
+      <li>Razorpay (India, UPI, Card, Netbanking)</li>
+      <li>PayPal (International)</li>
+      <li>Cashfree (India, UPI, Card, Wallets)</li>
+      <li>Paytm (India, UPI, Wallets)</li>
+    </ul>
+    <p>For production, integrate with Stripe, Razorpay, or PayPal for secure payments.</p>
+  </div>
+</div>
