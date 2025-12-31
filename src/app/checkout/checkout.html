@@ -1,6 +1,9 @@
 <div class="checkout-container">
   <h2>Checkout</h2>
-  <form class="checkout-form">
+
+  <div class="checkout-content">
+    <!-- Left: Form -->
+    <form class="checkout-form">
     <label>
       Name:
       <input type="text" name="name" required />
@@ -24,6 +27,33 @@
     </label>
     <button type="submit" class="checkout-btn">Place Order</button>
   </form>
+
+    <!-- Right: Product Details -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div *ngIf="cart.length === 0" class="empty-cart">Your cart is empty.</div>
+      <div class="order-list" *ngIf="cart.length > 0">
+        <div class="order-item" *ngFor="let item of uniqueCartItems()">
+          <div class="product-image">
+            <img [src]="item.product.image" [alt]="item.product.name">
+          </div>
+          <div class="product-details">
+            <h4 class="product-name">{{ item.product.name }}</h4>
+            <p class="product-description">{{ item.product.description }}</p>
+            <div class="product-quantity">Quantity: {{ item.count }}</div>
+            <div class="product-price">
+              <span class="unit-price">${{ item.product.price }} each</span>
+              <span class="total-price">${{ (item.product.price * item.count).toFixed(2) }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-total" *ngIf="cart.length > 0">
+        <strong>Total: ${{ total }}</strong>
+      </div>
+    </div>
+  </div>
+
   <div class="checkout-note">
     <strong>Popular Payment Gateways:</strong>
     <ul>
