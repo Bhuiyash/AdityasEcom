@@ -1,7 +1,12 @@
 <div class="home-container">
   <h2>Featured Products</h2>
   <div class="product-list">
-    <app-product-card *ngFor="let product of paginatedProducts" [product]="product" [addToCart]="addToCart.bind(this)"></app-product-card>
+    <app-product-card
+      *ngFor="let product of paginatedProducts"
+      [product]="product"
+      [addToCart]="addToCart.bind(this)"
+      [cartCountForProduct]="getCartCount(product)"
+    ></app-product-card>
   </div>
   <div class="pagination-controls">
     <button (click)="prevPage()" [disabled]="page === 1">Previous</button>

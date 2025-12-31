@@ -11,4 +11,5 @@ import { CommonModule } from '@angular/common';
 export class ProductCardComponent {
   @Input() product: any;
   @Input() addToCart?: (product: any) => void;
+  @Input() cartCountForProduct?: number;
 }

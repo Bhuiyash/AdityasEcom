@@ -41,4 +41,8 @@ export class HomeComponent {
   get totalPages() {
     return Math.ceil(this.products.length / this.pageSize);
   }
+
+  getCartCount(product: any): number {
+    return this.cart.filter((item) => item.name === product.name).length;
+  }
 }

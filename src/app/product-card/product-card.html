@@ -6,6 +6,7 @@
     <div class="product-footer">
       <span class="product-price">${{ product.price }}</span>
       <button class="add-to-cart-btn" *ngIf="addToCart" (click)="addToCart(product)">Add to Cart</button>
+      <span *ngIf="cartCountForProduct && cartCountForProduct > 0" class="product-cart-count">({{ cartCountForProduct }})</span>
     </div>
   </div>
 </div>
