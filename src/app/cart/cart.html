@@ -2,12 +2,18 @@
   <h2>Your Cart</h2>
   <div *ngIf="cart.length === 0" class="empty-cart">Your cart is empty.</div>
   <div class="cart-list" *ngIf="cart.length > 0">
-    <div *ngFor="let product of cart; let i = index" class="cart-item">
-      <app-product-card [product]="product"></app-product-card>
-      <button class="remove-btn" (click)="removeFromCart(i)">Remove</button>
+    <div *ngFor="let item of uniqueCartItems(); let i = index" class="cart-item">
+      <app-product-card [product]="item.product" [cartCountForProduct]="item.count"></app-product-card>
+      <div class="cart-qty-controls">
+        <button class="qty-btn" (click)="removeOne(item.product)">-</button>
+        <span class="cart-qty">{{ item.count }}</span>
+        <button class="qty-btn" (click)="addOne(item.product)">+</button>
+        <button class="remove-btn" (click)="removeAllOfProduct(item.product)">Remove All</button>
+      </div>
     </div>
     <div class="cart-total">
       <span>Total: ${{ total }}</span>
     </div>
+    <button class="checkout-btn" [routerLink]="'/checkout'">Proceed to Checkout</button>
   </div>
 </div>

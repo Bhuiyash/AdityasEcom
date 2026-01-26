@@ -1,0 +1,45 @@
+<div class="checkout-container">
+  <h2>Checkout</h2>
+
+  <div class="checkout-content">
+    <!-- Left: Form -->
+    <app-checkout-form (formSubmit)="onFormSubmit($event)"></app-checkout-form>
+
+    <!-- Right: Product Details -->
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div *ngIf="cart.length === 0" class="empty-cart">Your cart is empty.</div>
+      <div class="order-list" *ngIf="cart.length > 0">
+        <div class="order-item" *ngFor="let item of uniqueCartItems()">
+          <div class="product-image">
+            <img [src]="item.product.image" [alt]="item.product.name">
+          </div>
+          <div class="product-details">
+            <h4 class="product-name">{{ item.product.name }}</h4>
+            <p class="product-description">{{ item.product.description }}</p>
+            <div class="product-quantity">Quantity: {{ item.count }}</div>
+            <div class="product-price">
+              <span class="unit-price">${{ item.product.price }} each</span>
+              <span class="total-price">${{ (item.product.price * item.count).toFixed(2) }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="order-total" *ngIf="cart.length > 0">
+        <strong>Total: ${{ total }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout-note">
+    <strong>Popular Payment Gateways:</strong>
+    <ul>
+      <li>Stripe (Card, UPI, Wallets, etc.)</li>
+      <li>Razorpay (India, UPI, Card, Netbanking)</li>
+      <li>PayPal (International)</li>
+      <li>Cashfree (India, UPI, Card, Wallets)</li>
+      <li>Paytm (India, UPI, Wallets)</li>
+    </ul>
+    <p>For production, integrate with Stripe, Razorpay, or PayPal for secure payments.</p>
+  </div>
+</div>
